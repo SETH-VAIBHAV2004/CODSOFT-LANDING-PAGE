@@ -18,6 +18,30 @@ header {
   color: var(--font-color);
   padding: 1.5em 0;
   text-align: center;
+  position: relative;
+}
+
+header .animated-heading {
+  font-size: 2.5em;
+  background: linear-gradient(90deg, #ff6ec4, #7873f5, #42a5f5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-animation 4s ease infinite;
+  margin-bottom: 0.5em;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 nav ul {
