@@ -64,6 +64,30 @@ section h2 {
   color: var(--secondary-color);
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 1em;
+}
+
+form input,
+form textarea {
+  padding: 0.5em;
+  margin-top: 0.5em;
+}
+
+form button {
+  margin-top: 1em;
+  padding: 0.7em;
+  background-color: var(--primary-color);
+  color: var(--font-color);
+  border: none;
+  cursor: pointer;
+}
+
 footer {
   background-color: var(--primary-color);
   color: var(--font-color);
