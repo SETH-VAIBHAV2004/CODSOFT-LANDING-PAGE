@@ -1,36 +1,42 @@
-:root {
-  --primary-color: #002147; /* Dark navy blue */
-  --secondary-color: #333;
-  --font-color: #fff;
-  --highlight-color: #4caf50;
+/* Reset and basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color: var(--secondary-color);
   line-height: 1.6;
+  background-color: #f9f9f9;
 }
 
+/* Header styles */
 header {
-  background-color: var(--primary-color);
-  color: var(--font-color);
-  padding: 1.5em 0;
-  text-align: center;
-  position: relative;
+  background-color: #002147; /* Dark navy blue */
+  color: #fff;
+  padding: 1em 0;
 }
 
-header .animated-heading {
-  font-size: 2.5em;
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2em; /* Add padding to create space around header items */
+}
+
+.animated-heading {
+  font-size: 3em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   background: linear-gradient(90deg, #ff6ec4, #7873f5, #42a5f5);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-size: 200% 200%;
+  margin-bottom: 0;
   animation: gradient-animation 4s ease infinite;
-  margin-bottom: 0.5em;
 }
 
 @keyframes gradient-animation {
@@ -47,20 +53,24 @@ header .animated-heading {
 
 nav ul {
   list-style-type: none;
-  padding: 0;
-  margin: 0;
+  display: flex;
 }
 
 nav ul li {
-  display: inline;
-  margin: 0 1.5em;
+  margin-right: 1.5em;
 }
 
 nav ul li a {
-  color: var(--font-color);
+  color: #fff;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
+nav ul li a:hover {
+  color: #ff6ec4; /* Pink */
+}
+
+/* Main content sections */
 main {
   padding: 2em;
 }
@@ -70,95 +80,13 @@ section {
 }
 
 section h2 {
-  border-bottom: 2px solid var(--highlight-color);
+  border-bottom: 2px solid #4caf50; /* Green */
   padding-bottom: 0.5em;
   margin-bottom: 1em;
+  color: #002147; /* Dark blue */
 }
 
-.responsive {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1em 0;
-}
-
-.services-container {
-  display: flex;
-  gap: 1em;
-  justify-content: space-between; /* Adjust as needed */
-}
-
-.service-box {
-  flex: 1;
-  padding: 1em;
-  border: 1px solid #ccc;
-  text-align: center;
-  background-color: var(--font-color);
-  color: var(--secondary-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Adjust as needed */
-}
-
-.service-box img {
-  max-width: 100%;
-  height: 200px; /* Set a fixed height for all service images */
-  object-fit: cover; /* Ensures the image covers the container without stretching */
-}
-
-.service-box h3 {
-  margin-top: 0.5em;
-}
-
-.service-box p {
-  flex: 1;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-form label {
-  margin-top: 1em;
-}
-
-form input,
-form textarea {
-  padding: 0.5em;
-  margin-top: 0.5em;
-}
-
-form button {
-  margin-top: 1em;
-  padding: 0.7em;
-  background-color: var(--highlight-color);
-  color: var(--font-color);
-  border: none;
-  cursor: pointer;
-}
-
-footer {
-  background-color: var(--primary-color);
-  color: var(--font-color);
-  text-align: center;
-  padding: 1.5em 0;
-}
-
-@media (max-width: 768px) {
-  .services-container {
-    flex-direction: column;
-    align-items: center; /* Center items on smaller screens */
-  }
-
-  nav ul li {
-    display: block;
-    margin: 1em 0;
-  }
-}
-
-/* Added styles for About Us section */
-
+/* About Us section */
 .about-content {
   display: flex;
   align-items: center;
@@ -172,41 +100,140 @@ footer {
 
 .about-text {
   flex: 1;
-  text-align: justify; /* Justify text in the About Us section */
+  text-align: justify;
 }
 
-/* Styles for Contact Us section */
-
-#contact {
-  background-color: #f9f9f9;
-  padding: 4em 2em;
+/* Services section */
+#services {
   text-align: center;
+  padding: 4em 0;
+  background-color: #f9f9f9; /* Light gray background */
 }
 
-#contact h2 {
+#services h2 {
   margin-bottom: 1em;
+  font-size: 2.5em;
   color: #002147; /* Dark blue */
 }
 
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+}
+
+.service-box {
+  flex: 1;
+  padding: 1em;
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-box img {
+  max-width: 100%;
+  height: 200px; /* Set a fixed height for all service images */
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.service-box:hover img {
+  transform: scale(1.1); /* Scale up image on hover */
+}
+
+.service-box h3 {
+  margin-top: 1em;
+  font-size: 1.5em;
+  color: #002147; /* Dark blue */
+}
+
+.service-box p {
+  margin-top: 0.5em;
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-box {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* Contact Us section */
+#contact {
+  background: linear-gradient(135deg, #002147, #42a5f5, #4caf50);
+  color: #fff;
+  padding: 2em 0; /* Decreased padding */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#contact h2 {
+  margin-bottom: 0.5em; /* Decreased margin */
+  font-size: 2em; /* Decreased font size */
+  animation: fadeInDown 1s ease forwards;
+}
+
 #contact p {
-  margin-bottom: 2em;
-  font-size: 1.1em;
-  color: #666; /* Dark gray */
+  margin-bottom: 1em; /* Decreased margin */
+  font-size: 1.1em; /* Decreased font size */
+  animation: slideInLeft 1s ease 0.5s forwards;
 }
 
 form {
   max-width: 600px;
   margin: 0 auto;
-  background-color: #fff;
-  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1.5em; /* Decreased padding */
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  animation: slideInUp 1s ease 1s forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 form label {
   display: block;
   margin-bottom: 0.5em;
   color: #002147; /* Dark blue */
+  animation: slideInRight 1s ease 1s forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 form input,
@@ -217,6 +244,7 @@ form textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1em;
+  animation: slideInLeft 1s ease 1s forwards;
 }
 
 form textarea {
@@ -225,7 +253,7 @@ form textarea {
 }
 
 form button {
-  background-color: #4caf50; /* Green */
+  background-color: #ff6ec4; /* Pink */
   color: #fff;
   border: none;
   padding: 0.8em 1.5em;
@@ -233,13 +261,64 @@ form button {
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  animation: slideInUp 1s ease 1.5s forwards;
 }
 
 form button:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #ff4081; /* Darker pink on hover */
 }
 
 @media (max-width: 768px) {
+  form {
+    padding: 1em; /* Further decreased padding for smaller screens */
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #002147; /* Dark navy blue */
+  color: #fff;
+  text-align: center;
+  padding: 1.5em 0;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 1em;
+  }
+
+  .animated-heading {
+    font-size: 2.5em;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #002147; /* Dark navy blue */
+    padding: 1em;
+    display: none;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin-bottom: 1em;
+  }
+
+  nav ul li a {
+    font-size: 0.9em;
+  }
+
+  /* Adjustments for Contact Us section on smaller screens */
+  #contact {
+    padding: 2em 1em;
+  }
+
   form {
     padding: 1.5em;
   }
