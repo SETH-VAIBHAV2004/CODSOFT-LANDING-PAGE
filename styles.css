@@ -1,7 +1,8 @@
 :root {
-  --primary-color: #4caf50;
+  --primary-color: #002147; /* Dark navy blue */
   --secondary-color: #333;
   --font-color: #fff;
+  --highlight-color: #4caf50;
 }
 
 body {
@@ -69,9 +70,16 @@ section {
 }
 
 section h2 {
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--highlight-color);
   padding-bottom: 0.5em;
   margin-bottom: 1em;
+}
+
+.responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1em 0;
 }
 
 .services-container {
@@ -86,6 +94,12 @@ section h2 {
   text-align: center;
   background-color: var(--font-color);
   color: var(--secondary-color);
+}
+
+.service-box img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1em;
 }
 
 form {
@@ -106,7 +120,7 @@ form textarea {
 form button {
   margin-top: 1em;
   padding: 0.7em;
-  background-color: var(--primary-color);
+  background-color: var(--highlight-color);
   color: var(--font-color);
   border: none;
   cursor: pointer;
@@ -128,4 +142,21 @@ footer {
     display: block;
     margin: 1em 0;
   }
+}
+
+/* Added styles for About Us section */
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.about-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.about-text {
+  flex: 1;
 }
